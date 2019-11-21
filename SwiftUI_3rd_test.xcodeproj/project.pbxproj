@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		2E6A003AC4AF17E9655EE03C /* Pods_SwiftUI_3rd_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2A5B4197F34C1C3CEDB082 /* Pods_SwiftUI_3rd_test.framework */; };
+		33CD4CE9238535D500466EFB /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 33CD4CE8238535D500466EFB /* URLImage */; };
 		33F2C20A2384FB85006405DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F2C2092384FB85006405DE /* AppDelegate.swift */; };
 		33F2C20C2384FB85006405DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F2C20B2384FB85006405DE /* SceneDelegate.swift */; };
 		33F2C20E2384FB85006405DE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F2C20D2384FB85006405DE /* ContentView.swift */; };
@@ -35,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33CD4CE9238535D500466EFB /* URLImage in Frameworks */,
 				2E6A003AC4AF17E9655EE03C /* Pods_SwiftUI_3rd_test.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -96,7 +98,6 @@
 				620AE8145E5190EB07B8D2A5 /* Pods-SwiftUI_3rd_test.debug.xcconfig */,
 				761660088A4BDD5C01B61E45 /* Pods-SwiftUI_3rd_test.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -118,6 +119,9 @@
 			dependencies = (
 			);
 			name = SwiftUI_3rd_test;
+			packageProductDependencies = (
+				33CD4CE8238535D500466EFB /* URLImage */,
+			);
 			productName = SwiftUI_3rd_test;
 			productReference = 33F2C2062384FB85006405DE /* SwiftUI_3rd_test.app */;
 			productType = "com.apple.product-type.application";
@@ -146,6 +150,9 @@
 				Base,
 			);
 			mainGroup = 33F2C1FD2384FB85006405DE;
+			packageReferences = (
+				33CD4CE7238535D500466EFB /* XCRemoteSwiftPackageReference "url-image" */,
+			);
 			productRefGroup = 33F2C2072384FB85006405DE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -413,6 +420,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		33CD4CE7238535D500466EFB /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.9;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		33CD4CE8238535D500466EFB /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 33CD4CE7238535D500466EFB /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 33F2C1FE2384FB85006405DE /* Project object */;
 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2E6A003AC4AF17E9655EE03C /* Pods_SwiftUI_3rd_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2A5B4197F34C1C3CEDB082 /* Pods_SwiftUI_3rd_test.framework */; };
+		330D7D30238DEF6500625D4E /* ListDictionaryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330D7D2F238DEF6500625D4E /* ListDictionaryTest.swift */; };
 		33CD4CE9238535D500466EFB /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 33CD4CE8238535D500466EFB /* URLImage */; };
 		33F2C20A2384FB85006405DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F2C2092384FB85006405DE /* AppDelegate.swift */; };
 		33F2C20C2384FB85006405DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F2C20B2384FB85006405DE /* SceneDelegate.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		330D7D2F238DEF6500625D4E /* ListDictionaryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDictionaryTest.swift; sourceTree = "<group>"; };
 		33F2C2062384FB85006405DE /* SwiftUI_3rd_test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUI_3rd_test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33F2C2092384FB85006405DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33F2C20B2384FB85006405DE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 				33F2C2092384FB85006405DE /* AppDelegate.swift */,
 				33F2C20B2384FB85006405DE /* SceneDelegate.swift */,
 				33F2C20D2384FB85006405DE /* ContentView.swift */,
+				330D7D2F238DEF6500625D4E /* ListDictionaryTest.swift */,
 				33F2C20F2384FB87006405DE /* Assets.xcassets */,
 				33F2C2142384FB87006405DE /* LaunchScreen.storyboard */,
 				33F2C2172384FB87006405DE /* Info.plist */,
@@ -223,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33F2C20A2384FB85006405DE /* AppDelegate.swift in Sources */,
+				330D7D30238DEF6500625D4E /* ListDictionaryTest.swift in Sources */,
 				33F2C20C2384FB85006405DE /* SceneDelegate.swift in Sources */,
 				33F2C20E2384FB85006405DE /* ContentView.swift in Sources */,
 			);

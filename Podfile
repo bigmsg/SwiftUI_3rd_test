@@ -8,6 +8,7 @@ use_frameworks!
   pod 'Alamofire'
   pod 'SwiftyJSON'
 
+  pod 'Socket.IO-Client-Swift', '~> 15.2.0'
   # Pods for SwiftUI_3rd_test
 
 end

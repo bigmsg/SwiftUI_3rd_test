@@ -9,6 +9,26 @@
 import UIKit
 import SwiftUI
 
+
+struct MainViewControllerWrapper: UIViewControllerRepresentable {
+    
+    //var recent: NSDictionary
+    
+    //typealias UIViewControllerType = ChatViewController
+
+    func makeUIViewController(context: UIViewControllerRepresentableContext<MainViewControllerWrapper>) -> MainViewController {
+        
+        let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let chatVC = storyBoard.instantiateViewController(withIdentifier: "mainViewStoryboard") as! MainViewController
+        return chatVC
+    }
+
+    func updateUIViewController(_ uiViewController: MainViewController, context: UIViewControllerRepresentableContext<MainViewControllerWrapper>) {
+        // do nothing
+    }
+}
+
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
@@ -21,7 +41,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Create the SwiftUI view that provides the window contents.
         //let contentView = ContentView()
-        let contentView = ListDictionaryTest()
+        //let contentView = ListDictionaryTest()
+        let contentView = MainViewControllerWrapper()
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {

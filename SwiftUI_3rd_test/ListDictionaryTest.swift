@@ -15,35 +15,65 @@ struct ListDictionaryTest: View {
         ["name": "Kim", "age": "47", "city":"pusan"],
         ["name": "Jin", "age": "46", "city":"chunju"]
     ]
+    @State var data = ""
     var body: some View {
-        List (dictArray, id: \.self) { friend in
-            Text("hello \(friend["name"]!)").onAppear(){
-                print(friend)
-            }
+        VStack {
+            /*List (dictArray, id: \.self) { friend in
+                Text("hello \(friend["name"]!)").onAppear(){
+                    //print(friend)
+                }
+            }*/
+            Spacer()
+            Text("data: \(data)")
+            Spacer()
         }.onAppear(){
             self.connect()
         }
+        
     }
     
     
     func connect () {
         print("------ connect() ... -------")
+        self.data = "good"
 
         let manager = SocketManager(socketURL: URL(string: "http://localhost:8080")!, config: [.log(true), .compress])
         let socket = manager.defaultSocket
 
         socket.on(clientEvent: .connect) {data, ack in
             print("socket connected")
+            print("data: \(data)")
+            print("ack: \(ack)")
+            self.data = "hello"
+            socket.emit("myroom", ["greet": "Hi Python"])
+            socket.emit("update", ["amount": "update emitted"])
         }
 
-        socket.on("currentAmount") {data, ack in
+        socket.on("myroom") {data, ack in
             guard let cur = data[0] as? Double else { return }
+            self.data = "\(data)"
             
             socket.emitWithAck("canUpdate", cur).timingOut(after: 0) {data in
                 socket.emit("update", ["amount": cur + 2.50])
             }
 
             ack.with("Got your currentAmount", "dude")
+        }
+        
+        socket.on("myroom") {data, ack in
+            print("\n------- myroom: receving -----------\n")
+            print("myroom event.on: \(data)")
+        }
+        
+
+        
+        
+        
+
+        
+        socket.on(clientEvent: .disconnect) {data, ack in
+            print("--- disconnected ------")
+            print("\(data)")
         }
 
         socket.connect()

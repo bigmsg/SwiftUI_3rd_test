@@ -7,6 +7,11 @@
 //
 
 import SwiftUI
+func changeLoginView() {
+    let window = UIApplication.shared.windows.filter { $0.isKeyWindow }.first!
+    window.rootViewController = UIHostingController(rootView: LoginView())
+    window.makeKeyAndVisible()
+}
 
 struct UsersView: View {
     var mb_id: String
@@ -25,12 +30,17 @@ struct UsersView: View {
                     }
                 }
 
-            }
+            }.navigationBarItems(trailing: Button(action: {
+                    changeLoginView()
+                }){
+                    Text("Logout")
+                }
+            )
 
         }.onAppear() {
             let index = self.users.firstIndex(of: self.mb_id)
             print("index: \(index!)")
-            self.users.remove(at: 0)
+            self.users.remove(at: index!)
             print(self.users)
         }
     }

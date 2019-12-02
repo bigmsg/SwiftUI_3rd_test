@@ -20,7 +20,7 @@ struct LoginView: View {
     var body: some View {
         NavigationView {
             VStack {
-                TextField("id", text: $mb_id)
+                TextField("id", text: $mb_id).autocapitalization(.none)
                 Button(action: {
                     changeUsersView(mb_id: self.mb_id)
                 }){

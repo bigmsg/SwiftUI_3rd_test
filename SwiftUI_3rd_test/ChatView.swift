@@ -69,7 +69,12 @@ struct ChatView: View {
     
     func socketConnection () {
         //let manager = SocketManager(socketURL: URL(string: "http://localhost:8080")!, config: [.log(true), .compress, .forceWebsockets(false), .connectParams(["mb_id":"mania"])])
-        manager = SocketManager(socketURL: URL(string: "http://localhost:8080")!, config: [.log(true), .compress, .forceWebsockets(false), .forcePolling(false), .connectParams(["mb_id": self.from]) ])
+        
+        /*
+            1. websocket 방식사용: .forceWebsockets(true)
+            2. user info 전달: .connectParams([])
+         */
+        manager = SocketManager(socketURL: URL(string: "http://localhost:8080")!, config: [.log(true), .compress, .forceWebsockets(true), .forcePolling(false), .connectParams(["mb_id": self.from]) ])
         //socket = manager.defaultSocket    // default namespace '/'
         socket = manager.socket(forNamespace: "/moal") // specil namespace '/consumer'
 

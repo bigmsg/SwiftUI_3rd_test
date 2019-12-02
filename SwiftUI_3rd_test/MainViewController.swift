@@ -12,7 +12,7 @@ import SwiftyJSON
 
 class MainViewController: UIViewController {
 
-    let manager = SocketManager(socketURL: URL(string: "http://localhost:8080")!, config: [.log(false), .compress, .forceWebsockets(false)])
+    let manager = SocketManager(socketURL: URL(string: "http://localhost:8080")!, config: [.log(true), .compress, .forceWebsockets(false) ])
     var socket: SocketIOClient!
     
     @IBOutlet weak var dataLabel: UILabel!
@@ -26,8 +26,9 @@ class MainViewController: UIViewController {
         print("------ connect() ... -------")
         //self.data = "good"
 
-        //let manager = SocketManager(socketURL: URL(string: "http://localhost:8080")!, config: [.log(true), .compress, .forceWebsockets(false)])
-        socket = manager.defaultSocket
+        //let manager = SocketManager(socketURL: URL(string: "http://localhost:8080")!, config: [.log(true), .compress, .forceWebsockets(false), .forcePolling(false)])
+        socket = manager.defaultSocket    // default namespace '/'
+        //socket = manager.socket(forNamespace: "/consumer") // specil naamespace '/consumer'
 
         guard let socket = socket else { return }
         
